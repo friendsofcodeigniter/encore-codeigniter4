@@ -1,6 +1,12 @@
-# This is my package Encore
+# CodeIgniter 4 Encore
+This package is a CodeIgniter 4 port from  [symfony/webpack-encore-bundle](https://github.com/symfony/webpack-encore-bundle)
 
----
+work in progress
+
+## Requirements
+
+- PHP 8.0+
+- CodeIgniter 4.0.4+
 
 ## Installation
 
@@ -11,11 +17,11 @@ composer require friendsofcodeigniter/encore_codeigniter4
 ```
 
 ## Usage
-
+Loading the helper
 ```php
-$encore_codeigniter4 = new Friendsofcodeigniter\Encore();
-echo $encore_codeigniter4->echoPhrase('Hello, Friendsofcodeigniter!');
+helper('Friendsofcodeigniter\Encore\encore');
 ```
+
 
 ## Testing
 
