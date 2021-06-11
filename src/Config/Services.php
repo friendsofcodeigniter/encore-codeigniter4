@@ -5,7 +5,6 @@ namespace Friendsofcodeigniter\Encore\Config;
 use CodeIgniter\Config\BaseService;
 use Friendsofcodeigniter\Encore\Encore;
 
-
 class Services extends BaseService
 {
     public static function encore($getShared = true)
