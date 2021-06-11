@@ -6,7 +6,7 @@ work in progress
 ## Requirements
 
 - PHP 8.0+
-- CodeIgniter 4.0.4+
+- CodeIgniter 4.1.3+
 
 ## Installation
 
