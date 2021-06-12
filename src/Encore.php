@@ -123,7 +123,7 @@ class Encore
 
         $html = '';
         foreach ($files as $file) {
-            $html .= '<link rel="stylesheet" href=""'.$file.'" '.$attributesRendered.'>';
+            $html .= '<link rel="stylesheet" href="'.$file.'" '.$attributesRendered.'>';
         }
 
         return $html;

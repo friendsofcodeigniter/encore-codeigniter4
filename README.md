@@ -19,12 +19,73 @@ You can install the package via composer:
 
 ```bash
 composer require friendsofcodeigniter/encore_codeigniter4
+
+```
+Installing [Webpack Encore](https://symfony.com/doc/current/frontend/encore/installation.html#installing-encore-in-non-symfony-applications)
+```bash
+yarn add @symfony/webpack-encore --dev
+or
+npm install @symfony/webpack-encore --save-dev
 ```
 
 ## Usage
-Loading the helper
+Loading the [helper](https://www.codeigniter.com/user_guide/general/helpers.html?#loading-a-helper)
 ```php
 helper('Friendsofcodeigniter\Encore\encore');
+```
+
+Example webpack.config.js
+```js
+// webpack.config.js
+const Encore = require('@symfony/webpack-encore');
+
+Encore
+    // directory where compiled assets will be stored
+    .setOutputPath('public/build/')
+    // public path used by the web server to access the output path
+    .setPublicPath('/build')
+
+    .addEntry('app', './assets/app.js')
+
+    // ...
+;
+
+// ...
+```
+
+Example view file
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <?= encore_entry_link_tags('app')?>
+    
+</head>
+<body>
+...
+<?= encore_entry_script_tags('app')?>
+</body>
+</html>
+```
+
+or
+
+```php
+<!DOCTYPE html>
+<html>
+<head>
+    <?php foreach (encore_entry_css_files('main') as $cssFiles): ?>
+    <link rel="stylesheet" href="<?=$cssFiles?>">
+    <?php endforeach; ?>
+</head>
+<body>
+...
+<?php foreach (encore_entry_js_files('main') as $jsFile): ?>
+<script src="<?=$jsFile?>"></script>
+<?php endforeach; ?>
+</body>
+</html>
 ```
 
 
