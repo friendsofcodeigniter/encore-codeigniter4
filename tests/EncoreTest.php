@@ -12,7 +12,6 @@ class EncoreTest extends CIUnitTestCase
 
         config('Encore')->output_path = __DIR__ . '/fixtures/build';
         helper('Friendsofcodeigniter\Encore\encore');
-
     }
 
     /** @test */
@@ -21,7 +20,7 @@ class EncoreTest extends CIUnitTestCase
         $this->assertEquals(
             [
                 'build/file1.js',
-                'build/file2.js'
+                'build/file2.js',
             ],
             encore_entry_js_files('my_entry')
         );
@@ -33,7 +32,7 @@ class EncoreTest extends CIUnitTestCase
         $this->assertEquals(
             [
                 "build/styles.css",
-                "build/styles2.css"
+                "build/styles2.css",
             ],
             encore_entry_css_files('my_entry')
         );
@@ -49,8 +48,8 @@ class EncoreTest extends CIUnitTestCase
 
         $this->assertSame(
             '<script src="build/file1.js" defer crossorigin="anonymous"></script><script src="build/file2.js" defer crossorigin="anonymous"></script>',
-            encore_entry_script_tags('my_entry','_default',[
-                'crossorigin' => 'anonymous'
+            encore_entry_script_tags('my_entry', '_default', [
+                'crossorigin' => 'anonymous',
             ])
         );
     }
@@ -65,8 +64,8 @@ class EncoreTest extends CIUnitTestCase
 
         $this->assertSame(
             '<link rel="stylesheet" href="build/styles.css" crossorigin="anonymous"><link rel="stylesheet" href="build/styles2.css" crossorigin="anonymous">',
-            encore_entry_link_tags('my_entry','_default',[
-                'crossorigin' => 'anonymous'
+            encore_entry_link_tags('my_entry', '_default', [
+                'crossorigin' => 'anonymous',
             ])
         );
     }
